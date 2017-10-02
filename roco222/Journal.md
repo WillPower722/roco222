@@ -35,3 +35,12 @@ $ mv hello-again.md hello-hello.md moves hello-again.md file to hello-hello.md
 $ rm hello.md removes the file  
 $ rm -rf removes all files (with permission) and all recursive files  
 $ cat /proc/cpuinfo displays all info on the CPU  
+
+---
+
+# **DC motor build**
+
+### **Components**
+
+* Commutator: The commutator is the two adhesive copper strips attatched to the cork which, when voltage is applied, will periodically flip the current direction allowing the motor to rotate.
+* Brush: the brush is a peice of metal that is not attached to the motor directly, but while the motor rotates the brush will remain stationary and make contact with the two peices of copper tape (Commutator) which will cause the flow of current to flip.
