@@ -73,25 +73,25 @@ We ran the the motor after uploading the code to the board and ran the program f
 
 Using the example Arduino code we managed to quickly work out how to control the servo motor after some trial and error with delay times. Here is the code we came up with:
 
-void setup(){
+**void setup(){**
   
-  pinMode(9, OUTPUT);
-  Serial.begin(9600);
+  **pinMode(9, OUTPUT);**
+  **Serial.begin(9600);**
 }
 
-**void loop(){
+**void loop(){**
  
- **int potValue = analogRead(A0); //reads the potentiometer value
+ **int potValue = analogRead(A0); //reads the potentiometer value**
  
- **int timing = 400 + (potValue * 2); //this value can range from the smallest delay the motor can read, to the largest
+ **int timing = 400 + (potValue * 2); //this value can range from the smallest delay the motor can read, to the largest**
 
- **digitalWrite(9, HIGH);
+ **digitalWrite(9, HIGH);**
  
- **delayMicroseconds(timing);
+ **delayMicroseconds(timing);**
  
- **digitalWrite(9, LOW);
+ **digitalWrite(9, LOW);**
 
- **delay(10);
+ **delay(10);**
 }
 
 This code only controls one motor and we will be using 2 in the project.
