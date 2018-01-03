@@ -48,3 +48,54 @@ $ cat /proc/cpuinfo displays all info on the CPU
 Copper wire: We used 75 turns of copper wire for the coil.
 
 ### **Improvements**
+
+* Comutator: We changed the commutator to have 4 strips of copper tape and 2 coils of copper wire with 60 turns each to improve the electro-magnetic field and to allow the magnets to have a greater affect on the motor. We also added an extra block of cork to the body to create more support for the copper strips.
+* Brush: we swapped the wire we were using from a single length of metal to a wire with multiple frayed wires for more consistent contact with the copper strips.
+
+---
+
+# **Incremental encoder**
+
+### **Build**
+
+For the incremental encoder we built a disc out of thick paper, cut a quarter out of it and attached it to our motor with blue tac. Next we built the encoder using an infared transmitter and an infared receiver and put it either side of the disc.
+We then used the arduino board to connect to the encoder and pogrammed the board so that every time the infared receiver measures a rising pulse, we increment a variable by 1.
+
+### **Testing**
+
+We ran the the motor after uploading the code to the board and ran the program for 20 seconds and multipied the result by 3; we did this 3 times to get an avrage of about 10,000 rpm which seems to be too high so we will need to calibrate our design to aquire a more reasonable value.
+
+---
+
+# **Robot Arm Project**
+
+## **Servo motor control**
+
+Using the example Arduino code we managed to quickly work out how to control the servo motor after some trial and error with delay times. Here is the code we came up with:
+
+void setup(){
+  
+  pinMode(9, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop(){
+ 
+ int potValue = analogRead(A0); //reads the potentiometer value
+ int timing = 400 + (potValue * 2); //this value can range from the smallest delay the motor can read, to the largest
+
+ digitalWrite(9, HIGH);
+ 
+ delayMicroseconds(timing);
+ 
+ digitalWrite(9, LOW);
+ 
+
+ delay(10);
+}
+
+This code only controls one motor and we will be using 2 in the project.
+
+## **Arm Design**
+
+For the arm we will only have 2 axis of movement so we are going to make an arm that moves back and forth and grab things with a claw. We are going for a small arm design to keep it lightweight and efficient; the 3D print material shoud be strong enough so that the arm doesnt bend or break.
