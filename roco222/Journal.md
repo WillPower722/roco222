@@ -98,4 +98,22 @@ This code only controls one motor and we will be using 2 in the project.
 
 ## **Arm Design**
 
-For the arm we will only have 2 axis of movement so we are going to make an arm that moves back and forth and grab things with a claw. We are going for a small arm design to keep it lightweight and efficient; the 3D print material shoud be strong enough so that the arm doesnt bend or break.
+For the arm we will only have 2 axis of movement so we are going to make an arm that moves back and forth and grab things with a claw. We are going for a small arm design to keep it lightweight and efficient; the 3D print material shoud be strong enough so that the arm doesnt bend or break. We intend to have the first motor attached to a base which will be connected to two arms to form the top of a triangle and when the arm changes angle a horizontal rail arm will slide back and forth making the base of the arm triangle longer. At the end of the rail arm we will put a slot for the motor and a static platform which will act as one of the claws. The other claw will be controlled by the motor and will open and close like a mouth.
+
+## **Build**
+
+We successfully printed all the componets for the arm (although we had to re-print the rail arm due to a measurement error). When we came to putting the pieces together we realised that some components didn't fit perfectly together (most likely due to non-perfect accuracy from the 3D printer) and so, over the Christmas holiday, I managed to file/sand some of these slots so that the parts all fit comfortably together. We also glued washers to end of the pegs holding the arm together to ensure it doesnt fall apart while it's in use. 
+
+## **Final arm build**
+
+### **Issues:**
+
+* The claw doesn't perfectly align with its counterpart; this could be due to error in measurements and also the way all the pats fit together not being as millimeter accurate as our CAD design was.
+* The pegs and holes that bind the arms together create a lot of friction so we had to file those down to allow the joints to rotate with ease.
+* The pegs which were attached to the base which wer built to screw the motor onto were a little too small and fragile so they snapped off. We decided to glue the servo to the base as a backup solution.
+* The last issue is that that, because the arm is quite small, ith is fairly flexible and not massively heavy so if it were to try and pull something heavier than itself, it would pull itself towards said object.
+
+### **Advantages**
+
+* Due to its size, the arm is very portable and can fit in a small bag if needed without needing to be taken apart and reassembled.
+* Because of the way we designed it, the arm had a very long reach and can extend almost the whole length of the rail arm.
