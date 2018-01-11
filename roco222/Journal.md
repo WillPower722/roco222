@@ -206,7 +206,7 @@ Using the example Arduino code we managed to quickly work out how to control the
   
   **pinMode(9, OUTPUT);**
   **Serial.begin(9600);**
-}
+**}**
 
 **void loop(){**
  
@@ -221,7 +221,7 @@ Using the example Arduino code we managed to quickly work out how to control the
  **digitalWrite(9, LOW);**
 
  **delay(10);**
-}
+**}**
 
 This code only controls one motor and we will be using 2 in the project.
 
@@ -235,36 +235,36 @@ We successfully printed all the componets for the arm (although we had to re-pri
 
 This is the arduino code we used to control the two motors:
 
-**void setup(){
+**void setup(){**
   
-  **pinMode(9, OUTPUT);
-  **pinMode(10, OUTPUT);
-  **Serial.begin(9600);
-**}
+  **pinMode(9, OUTPUT);**
+  **pinMode(10, OUTPUT);**
+  **Serial.begin(9600);**
+**}**
 
-**void loop(){
+**void loop(){**
  
- **int potValue1 = analogRead(A0);
- int potValue2 = analogRead(A1);
- int timing1 = 400 + (potValue1);
- int timing2 = 400 + (potValue2);
+ **int potValue1 = analogRead(A0);**
+ **int potValue2 = analogRead(A1);**
+ **int timing1 = 400 + (potValue1);**
+ **int timing2 = 400 + (potValue2);**
 
- **digitalWrite(9, HIGH);
+ **digitalWrite(9, HIGH);**
  
- **delayMicroseconds(timing1);
+ **delayMicroseconds(timing1);**
  
- **digitalWrite(9, LOW);
+ **digitalWrite(9, LOW);**
  
- **delay(10);
+ **delay(10);**
  
- **digitalWrite(10, HIGH);
+ **digitalWrite(10, HIGH);*
  
- **delayMicroseconds(timing2);
+ **delayMicroseconds(timing2);**
  
- **digitalWrite(10, LOW);
+ **digitalWrite(10, LOW);**
 
- **delay(10);
-}**
+ **delay(10);**
+**}**
 
 ## **Final arm build**
 
@@ -292,4 +292,3 @@ These photos/gifs demonstrate the capabilities of our arm. As you can see, there
 ### **ROS**
 
 Unfortunately we could not implement ROS into our build due to time constrains and difficulty with using ROS in general. My lab partner was more in charge of getting ROS working while I focused more on completing the design and build so I'm uncertain exactly what the issues were but at least we managed to get a robot designed, built and moving! 
-
