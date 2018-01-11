@@ -268,6 +268,8 @@ This is the arduino code we used to control the two motors:
 
 ## **Final arm build**
 
+![dsc_0457](https://user-images.githubusercontent.com/32261837/34829529-e960a37c-f6d8-11e7-9717-a96f6f1ff0ca.JPG)
+
 ### **Issues:**
 
 * The claw doesn't perfectly align with its counterpart; this could be due to error in measurements and also the way all the pats fit together not being as millimeter accurate as our CAD design was.
