@@ -99,9 +99,100 @@ int pulseCounter = 0;
   pulseCounter++;
 }**
 
+![Encoder](https://user-images.githubusercontent.com/32261837/34827621-a92cca02-f6d2-11e7-8f32-7fc99b39b35c.jpg)
+
 ### **Testing**
 
 We ran the the motor after uploading the code to the board and ran the program for 20 seconds and multipied the result by 3; we did this 3 times to get an avrage of about 10,000 rpm which seems to be too high so we will need to calibrate our design to aquire a more reasonable value.
+
+---
+
+# **Stepper Motor**
+
+### **One phase**
+
+A one-phase motor has 4 poles and a magnet in the middle. The poles work so that only one pole is magnetically activie at a time and switch to an adjacent magnet to draw the magnet in the middle round in a circle.
+
+Here is the code we used:
+
+**void setup(){
+ 
+ **//set up channels A and B
+ pinMode(12, OUTPUT);  //Initiates Motor Channel A pin
+ pinMode(9, OUTPUT);   //Initiates Brake Channel A pin
+ pinMode(13, OUTPUT);  //Initiates Motor Channel B pin
+ pinMode(8, OUTPUT);   //Initiates Brake Channel B pin
+}
+
+**void loop(){
+  
+  **digitalWrite(12, HIGH); //Establishes forward direction of Channel A
+  digitalWrite(9, LOW);   //Disengage the Brake for Channel A
+  analogWrite(3, 255);    //Spins the motor on Channel A at full speed
+  digitalWrite(13, HIGH); //Establishes forward direction of Channel B
+  digitalWrite(8, LOW);   //Disengage the Brake for Channel B
+  analogWrite(11, 0);    //Spins the motor on Channel B at full speed
+  
+  **delay(1);
+  
+  **analogWrite(3, 0);    //Spins the motor on Channel A at full speed
+  analogWrite(11, 255);    //Spins the motor on Channel B at full speed
+
+  **delay(1);
+  
+  **digitalWrite(12, LOW); //Establishes backward direction of Channel A
+  analogWrite(3, 255);    //Spins the motor on Channel A at full speed
+  digitalWrite(13, LOW); //Establishes backward direction of Channel B
+  analogWrite(11, 0);    //Spins the motor on Channel B at full speed
+  
+  **delay(1);
+  
+  **analogWrite(3, 0);    //Spins the motor on Channel A at full speed
+  analogWrite(11, 255);    //Spins the motor on Channel B at full speed
+
+  **delay(1);
+
+**}**
+
+### **Two Phase**
+
+A two phase motor is designed similarly to theone phase except that two of the magnets are active at the same time. Instead of just one pole drawing the magnet round in a circle, the pole opposite the active one also becomes active but with a different polarity so that the magnet rotates faster. Although more energy is used, the rotation is quicker.
+
+Here is the code we used for Two Phase:
+
+**void setup(){
+ 
+ **//set up channels A and B
+ pinMode(12, OUTPUT);  //Initiates Motor Channel A pin
+ pinMode(9, OUTPUT);   //Initiates Brake Channel A pin
+ pinMode(13, OUTPUT);  //Initiates Motor Channel B pin
+ pinMode(8, OUTPUT);   //Initiates Brake Channel B pin
+}
+
+**void loop(){
+  
+  **digitalWrite(12, HIGH); //Establishes forward direction of Channel A
+  digitalWrite(9, LOW);   //Disengage the Brake for Channel A
+  analogWrite(3, 255);    //Spins the motor on Channel A at full speed
+  digitalWrite(13, HIGH); //Establishes forward direction of Channel B
+  digitalWrite(8, LOW);   //Disengage the Brake for Channel B
+  analogWrite(11, 255);    //Spins the motor on Channel B at full speed
+  
+  **delay(1);
+  
+  **digitalWrite(12, LOW); //Establishes backward direction of Channel A
+
+  **delay(1);
+  
+  **digitalWrite(13, LOW); //Establishes backward direction of Channel B
+  
+  **delay(1);
+  
+  **digitalWrite(12, HIGH); //Establishes forward direction of Channel A
+
+  **delay(1);
+
+**}**
 
 ---
 
