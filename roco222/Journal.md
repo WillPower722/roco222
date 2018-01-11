@@ -229,6 +229,7 @@ This code only controls one motor and we will be using 2 in the project.
 
 For the arm we will only have 2 axis of movement so we are going to make an arm that moves back and forth and grab things with a claw. We are going for a small arm design to keep it lightweight and efficient; the 3D print material shoud be strong enough so that the arm doesnt bend or break. We intend to have the first motor attached to a base which will be connected to two arms to form the top of a triangle and when the arm changes angle a horizontal rail arm will slide back and forth making the base of the arm triangle longer. At the end of the rail arm we will put a slot for the motor and a static platform which will act as one of the claws. The other claw will be controlled by the motor and will open and close like a mouth.
 
+
 ## **Build**
 
 We successfully printed all the componets for the arm (although we had to re-print the rail arm due to a measurement error). When we came to putting the pieces together we realised that some components didn't fit perfectly together (most likely due to non-perfect accuracy from the 3D printer) and so, over the Christmas holiday, I managed to file/sand some of these slots so that the parts all fit comfortably together. We also glued washers to end of the pegs holding the arm together to ensure it doesnt fall apart while it's in use.
@@ -269,6 +270,8 @@ This is the arduino code we used to control the two motors:
 ## **Final arm build**
 
 ![dsc_0457](https://user-images.githubusercontent.com/32261837/34829529-e960a37c-f6d8-11e7-9717-a96f6f1ff0ca.JPG)
+
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/32261837/34829617-2e1f7e7a-f6d9-11e7-9cca-7736f2919eaf.gif)
 
 ### **Issues:**
 
