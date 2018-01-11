@@ -257,7 +257,7 @@ This is the arduino code we used to control the two motors:
  
  **delay(10);**
  
- **digitalWrite(10, HIGH);*
+ **digitalWrite(10, HIGH);**
  
  **delayMicroseconds(timing2);**
  
@@ -282,6 +282,7 @@ These photos/gifs demonstrate the capabilities of our arm. As you can see, there
 * The pegs and holes that bind the arms together create a lot of friction so we had to file those down to allow the joints to rotate easier, however, it did not fully solve the problem.
 * The pegs which were attached to the base which wer built to screw the motor onto were a little too small and fragile so they snapped off. We decided to glue the servo to the base as a backup solution.
 * The last issue is that that, because the arm is quite small, it is fairly flexible and not massively heavy so if it were to try and pull something heavier than itself, it would pull itself towards said object.
+* The screw that attaches the sevo to the arm sometimes rotates which offsets the whole frame of the arm.
 
 ### **Advantages**
 
@@ -292,3 +293,15 @@ These photos/gifs demonstrate the capabilities of our arm. As you can see, there
 ### **ROS**
 
 Unfortunately we could not implement ROS into our build due to time constrains and difficulty with using ROS in general. My lab partner was more in charge of getting ROS working while I focused more on completing the design and build so I'm uncertain exactly what the issues were but at least we managed to get a robot designed, built and moving! 
+
+### **Improvements**
+
+Honestly speaking, with the number of issues we faced with this robot it would probably be worth re-designing the whole thing, however, a few thing to make this robot better would include:  
+* A heavier base would help to keep the robot stable and not move about as much.
+* The pegs for the joints would need to be a bit smaller so they can rotate with ease.
+* Remove as much friction from the joints as possible as well.
+* Make the claw larger so it can grab more objects.
+* Measure everything with more accurate measuring devises and also account for the fact that the 3D printer won't always print a perfect copy of the design.
+* Ensure that the arm cannot rotate around the screw by implementing a more sturdy fixation to the servo (Like glue or more screws).
+
+## **END OF JOURNAL**
