@@ -1,3 +1,6 @@
+# **Lab Journal: Will Redhead**
+                 (Partnered with Peter Allen)
+
 # **Markdown**
 
 ## **What it's about**
@@ -52,6 +55,8 @@ Copper wire: We used 75 turns of copper wire for the coil.
 * Comutator: We changed the commutator to have 4 strips of copper tape and 2 coils of copper wire with 60 turns each to improve the electro-magnetic field and to allow the magnets to have a greater affect on the motor. We also added an extra block of cork to the body to create more support for the copper strips.
 * Brush: we swapped the wire we were using from a single length of metal to a wire with multiple frayed wires for more consistent contact with the copper strips.
 
+
+
 ---
 
 # **Incremental encoder**
@@ -60,6 +65,39 @@ Copper wire: We used 75 turns of copper wire for the coil.
 
 For the incremental encoder we built a disc out of thick paper, cut a quarter out of it and attached it to our motor with blue tac. Next we built the encoder using an infared transmitter and an infared receiver and put it either side of the disc.
 We then used the arduino board to connect to the encoder and pogrammed the board so that every time the infared receiver measures a rising pulse, we increment a variable by 1.
+
+### **Code**
+
+This wasn't my first time using arduino so I managed to get the code working using the example code by adding 2 voids and a loop. 
+
+**#define NOT_AN_INTERRUPT -1
+
+**const byte ledPin = 13;
+const byte interruptPin = 2;
+volatile byte state = LOW;
+int pulseCounter = 0;
+
+**void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(interruptPin, INPUT);
+  Serial.begin(9600); // set up Serial library at 9600 bps
+
+  **// configure the interrupt call-back: blink is called everytime the pin
+  // goes from low to high.
+  attachInterrupt(digitalPinToInterrupt(interruptPin), blink, RISING);
+**}
+
+**void loop() {
+  digitalWrite(ledPin, state);
+  String counterString = String(pulseCounter);
+  Serial.println(counterString); // prints hello with ending line break
+  delay(1000); // wait 1s
+**}
+
+**void blink() {
+  state = !state;
+  pulseCounter++;
+}**
 
 ### **Testing**
 
@@ -102,7 +140,40 @@ For the arm we will only have 2 axis of movement so we are going to make an arm 
 
 ## **Build**
 
-We successfully printed all the componets for the arm (although we had to re-print the rail arm due to a measurement error). When we came to putting the pieces together we realised that some components didn't fit perfectly together (most likely due to non-perfect accuracy from the 3D printer) and so, over the Christmas holiday, I managed to file/sand some of these slots so that the parts all fit comfortably together. We also glued washers to end of the pegs holding the arm together to ensure it doesnt fall apart while it's in use. 
+We successfully printed all the componets for the arm (although we had to re-print the rail arm due to a measurement error). When we came to putting the pieces together we realised that some components didn't fit perfectly together (most likely due to non-perfect accuracy from the 3D printer) and so, over the Christmas holiday, I managed to file/sand some of these slots so that the parts all fit comfortably together. We also glued washers to end of the pegs holding the arm together to ensure it doesnt fall apart while it's in use.
+
+This is the arduino code we used to control the two motors:
+
+**void setup(){
+  
+  **pinMode(9, OUTPUT);
+  **pinMode(10, OUTPUT);
+  **Serial.begin(9600);
+**}
+
+**void loop(){
+ 
+ **int potValue1 = analogRead(A0);
+ int potValue2 = analogRead(A1);
+ int timing1 = 400 + (potValue1);
+ int timing2 = 400 + (potValue2);
+
+ **digitalWrite(9, HIGH);
+ 
+ **delayMicroseconds(timing1);
+ 
+ **digitalWrite(9, LOW);
+ 
+ **delay(10);
+ 
+ **digitalWrite(10, HIGH);
+ 
+ **delayMicroseconds(timing2);
+ 
+ **digitalWrite(10, LOW);
+
+ **delay(10);
+}**
 
 ## **Final arm build**
 
@@ -117,3 +188,5 @@ We successfully printed all the componets for the arm (although we had to re-pri
 
 * Due to its size, the arm is very portable and can fit in a small bag if needed without needing to be taken apart and reassembled.
 * Because of the way we designed it, the arm had a very long reach and can extend almost the whole length of the rail arm.
+* Since we chose to stick with 2 servo motors, the arm is quite easy to control using arduino code.
+
