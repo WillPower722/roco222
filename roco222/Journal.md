@@ -292,7 +292,7 @@ These photos/gifs demonstrate the capabilities of our arm. As you can see, there
 
 ### **ROS**
 
-Unfortunately we could not implement ROS into our build due to time constrains and difficulty with using ROS in general. My lab partner was more in charge of getting ROS working while I focused more on completing the design and build so I'm uncertain exactly what the issues were but at least we managed to get a robot designed, built and moving! 
+Unfortunately we could not implement ROS into our build due to time constrains and difficulty with using ROS in general so we are simply using potentiometers to control movement. My lab partner was more in charge of getting ROS working while I focused more on completing the design and build so I'm uncertain exactly what the issues were but at least we managed to get a robot designed, built and moving! 
 
 ### **Improvements**
 
