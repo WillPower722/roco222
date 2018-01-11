@@ -55,7 +55,7 @@ Copper wire: We used 75 turns of copper wire for the coil.
 * Comutator: We changed the commutator to have 4 strips of copper tape and 2 coils of copper wire with 60 turns each to improve the electro-magnetic field and to allow the magnets to have a greater affect on the motor. We also added an extra block of cork to the body to create more support for the copper strips.
 * Brush: we swapped the wire we were using from a single length of metal to a wire with multiple frayed wires for more consistent contact with the copper strips.
 
-
+![motor spin](https://user-images.githubusercontent.com/32261837/34827503-50ac6e1e-f6d2-11e7-92aa-b8c155204f56.gif)
 
 ---
 
